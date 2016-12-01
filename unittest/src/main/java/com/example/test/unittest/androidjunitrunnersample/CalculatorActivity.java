@@ -62,7 +62,7 @@ public class CalculatorActivity extends Activity {
             compute(Calculator.Operator.DIV);
         } catch (IllegalArgumentException iae) {
             Log.e(TAG, "IllegalArgumentException", iae);
-            mResultTextView.setText(getString(R.string.computationEr));
+            mResultTextView.setText(getString(R.string.computationError));
         }
     }
 
@@ -81,7 +81,7 @@ public class CalculatorActivity extends Activity {
             operandTwo = getOperand(mOperandTwoEditText);
         } catch (NumberFormatException nfe) {
             Log.e(TAG, "NumberFormatException", nfe);
-            mResultTextView.setText(getString(R.string.computationEr));
+            mResultTextView.setText(getString(R.string.computationError));
             return;
         }
 
@@ -100,7 +100,7 @@ public class CalculatorActivity extends Activity {
                 result = String.valueOf(mCalculator.mul(operandOne, operandTwo));
                 break;
             default:
-                result = getString(R.string.computationEr);
+                result = getString(R.string.computationError);
                 break;
         }
         mResultTextView.setText(result);

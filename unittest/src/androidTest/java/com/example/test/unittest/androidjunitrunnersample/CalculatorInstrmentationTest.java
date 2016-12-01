@@ -48,7 +48,7 @@ public class CalculatorInstrmentationTest {
 
     @Test
     public void noOperandShowsComputationError() {
-        final String expectedResult = mActivityRule.getActivity().getString(R.string.computationEr);
+        final String expectedResult = mActivityRule.getActivity().getString(R.string.computationError);
         onView(withId(R.id.operation_add_btn)).perform(click());
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
     }
@@ -71,7 +71,7 @@ public class CalculatorInstrmentationTest {
     @Test
     public void divZeroForOperandTwoShowsError() {
         final String expectedResult = mActivityRule.getActivity().getString(
-                R.string.computationEr);
+                R.string.computationError);
         performOperation(R.id.operation_div_btn, "128.0", "0.0", expectedResult);
     }
 
