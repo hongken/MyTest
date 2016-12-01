@@ -3,13 +3,16 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion rootProject.buildTooldsVersion
+
     defaultConfig {
-        applicationId "com.example.test.mytest"
+        applicationId "com.example.test.unittest"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -20,10 +23,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;
+    androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
+    androidTestCompile 'com.android.support.test:rules:' + rootProject.rulesVersion;
     testCompile 'junit:junit:' + rootProject.junitVersion;
+    compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;
+    compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
+    compile 'com.google.guava:guava:18.0'
 }
