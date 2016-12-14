@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion rootProject.sdkVersion
     buildToolsVersion rootProject.buildTooldsVersion
 
     defaultConfig {
-        applicationId "com.example.test.unittest"
+        applicationId "com.example.test.unittestrealm"
         minSdkVersion 21
         targetSdkVersion rootProject.sdkVersion
         versionCode 1
@@ -23,15 +25,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestCompile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
-    androidTestCompile 'com.android.support.test:runner:' + rootProject.runnerVersion;
-    androidTestCompile 'com.android.support.test:rules:' + rootProject.rulesVersion;
     testCompile 'junit:junit:' + rootProject.junitVersion;
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;
-    compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
-    compile 'com.google.guava:guava:18.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+
 }
