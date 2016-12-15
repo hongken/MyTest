@@ -5,6 +5,8 @@ configurations.all {
 
 allprojects {
 
+    def currentVersion = '2.2.1-SNAPSHOT';
+
     buildscript {
         repositories {
             mavenLocal()
@@ -14,9 +16,13 @@ allprojects {
         dependencies {
             classpath 'com.android.tools.build:gradle:2.2.3'
             classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+            classpath 'com.novoda:gradle-android-command-plugin:1.5.0'
             classpath "io.realm:realm-gradle-plugin:2.2.1"
         }
     }
+
+    group = 'io.realm'
+    version = currentVersion;
 
     repositories {
         jcenter()

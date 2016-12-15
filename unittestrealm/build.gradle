@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
 apply plugin: 'android-apt'
+apply plugin: 'android-command'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion rootProject.sdkVersion
@@ -29,6 +30,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    testCompile 'io.reactivex:rxjava:1.1.0'
+
     testCompile 'junit:junit:' + rootProject.junitVersion;
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;

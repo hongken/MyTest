@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Realm.init(getApplicationContext());
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         }.execute();
+
+    }
+
+    private void initContent() {
 
     }
 
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        showStatus(String.format("%1%s got older: %2%s", person.getName(), person.getAge()));
+        showStatus(String.format("%1$s got older: %2$s", person.getName(), person.getAge()));
 
         // Add two more people
         realm.executeTransaction(new Realm.Transaction() {
