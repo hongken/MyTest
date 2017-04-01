@@ -6,4 +6,5 @@ package com.example.test.mytest.test3;
 
 public class test3Work1 {
     private int num;
+    private int num1;
 }
