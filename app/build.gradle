@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion rootProject.sdkVersion
@@ -26,4 +27,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;
     testCompile 'junit:junit:' + rootProject.junitVersion;
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.squareup:otto:1.3.8'
+    provided 'org.projectlombok:lombok:1.14.0'
 }

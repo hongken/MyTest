@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyTest</string>
+    <string name="close">close</string>
+    <string name="confirm">confirm</string>
+    <string name="setting">setting</string>
+    <string name="permissions">Permissions</string>
+    <string name="go_permission_guide">Go to Permission Guide</string>
+    <string name="ok">ok</string>
+    <string name="permission_need_setting">If you reject permissionResultType,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]</string>
 </resources>
