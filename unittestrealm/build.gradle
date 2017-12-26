@@ -49,7 +49,6 @@ dependencies {
     testCompile "org.powermock:powermock-classloading-xstream:1.6.4"
 
     compile 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion;
-    compile 'com.jakewharton:butterknife:8.4.0'
     compile 'com.android.support:support-annotations:' + rootProject.supportLibVersion;
 
 }
